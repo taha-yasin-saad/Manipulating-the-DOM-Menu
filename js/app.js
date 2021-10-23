@@ -41,6 +41,8 @@ const navbarList = document.querySelector("#navbar__list");
 // build the nav
 function buildMenu() {
   sections.forEach((section, i) => {
+    let elementFragment = document.createDocumentFragment();
+
     const newAnchor = document.createElement("a");
     const newList = document.createElement("li");
 
@@ -52,7 +54,9 @@ function buildMenu() {
     newList.className = "sectionAnchorList";
 
     newAnchor.appendChild(newList);
-    navbarList.appendChild(newAnchor);
+    elementFragment.appendChild(newAnchor);
+    
+    navbarList.appendChild(elementFragment);
   });
 }
 
